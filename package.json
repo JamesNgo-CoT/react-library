@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamesNgo-CoT/react-app.git"
+    "url": "git+https://github.com/JamesNgo-CoT/react-library.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JamesNgo-CoT/react-app/issues"
+    "url": "https://github.com/JamesNgo-CoT/react-library/issues"
   },
-  "homepage": "https://github.com/JamesNgo-CoT/react-app#readme",
+  "homepage": "https://github.com/JamesNgo-CoT/react-library#readme",
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
