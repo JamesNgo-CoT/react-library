@@ -5,8 +5,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
+const commonPreprocessContext = {};
+const developmentPreprocessContext = {};
+const productionPreprocessContext = {};
+
 module.exports = (env, { mode }) => {
 	const isProduction = mode === 'production';
+
+	const preprocessContext = {
+		ENV: isProduction ? 'production' : 'development',
+		...commonPreprocessContext,
+		...isProduction
+			? productionPreprocessContext
+			: developmentPreprocessContext
+	};
 
 	return {
 		mode: isProduction ? 'production' : 'development',
@@ -21,26 +33,37 @@ module.exports = (env, { mode }) => {
 				{
 					test: /\.jsx?$/,
 					exclude: /node_modules/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							cacheDirectory: true,
-							cacheCompression: false,
-							envName: isProduction ? 'production' : 'development'
+					use: [
+						{
+							loader: 'preprocess-loader',
+							options: {
+								...preprocessContext,
+								ppOptions: {
+									type: 'js'
+								}
+							}
+						},
+						{
+							loader: 'babel-loader',
+							options: {
+								cacheDirectory: true,
+								cacheCompression: false,
+								envName: isProduction ? 'production' : 'development'
+							}
 						}
-					}
+					]
 				},
 				{
 					test: /\.css$/,
 					use: [
-						isProduction ? MiniCssExtractPlugin.loader: 'style-loader',
+						isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
 						'css-loader'
 					]
 				},
 				{
 					test: /\.s[ac]ss$/,
 					use: [
-						isProduction ? MiniCssExtractPlugin.loader: 'style-loader',
+						isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
 						{
 							loader: 'css-loader',
 							options: {
