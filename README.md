@@ -4,7 +4,7 @@ A React library boilerplate.
 
 ## Version
 
-1.0.0
+1.1.0
 ## Install
 
 ``` console
