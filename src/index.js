@@ -15,5 +15,5 @@ export default class App extends React.Component {
 
 	static propTypes = {
 		children: PropType.node
-	}
+	};
 }
