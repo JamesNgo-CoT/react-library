@@ -4,9 +4,9 @@ A React library boilerplate.
 
 ## Version
 
-1.1.0
+1.1.1
 ## Install
 
 ``` console
-npm install https://github.com/JamesNgo-CoT/react-library.git#1.1.0
+npm install https://github.com/JamesNgo-CoT/react-library.git#1.1.1
 ```
