@@ -10,6 +10,7 @@
 	</title>
 
 	<!-- STYLES BEGIN -->
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<% for (let index=0, length=htmlWebpackPlugin.files.css.length; index < length; index++) { %>
 	<link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[index] %>">
 	<% } %>
@@ -20,6 +21,8 @@
 	<div id="app"></div>
 
 	<!-- SCRIPTS BEGIN -->
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<% for (let index=0, length=htmlWebpackPlugin.files.js.length; index < length; index++) { %>
 	<script src="<%= htmlWebpackPlugin.files.js[index] %>"></script>
 	<% } %>

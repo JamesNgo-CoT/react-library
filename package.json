@@ -7,7 +7,8 @@
     "build": "webpack",
     "watch": "webpack watch",
     "build4prod": "webpack --mode production",
-    "build4test": "webpack --config webpack.config.test.js"
+    "build4test": "webpack --config webpack.config.test.js",
+    "watch4test": "webpack watch --config webpack.config.test.js"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,6 @@
     "html-webpack-plugin": "^5.5.0",
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "popper.js": "^1.16.1",
     "preprocess-loader": "^0.3.0",
     "prop-types": "^15.8.1",
     "resolve-url-loader": "^5.0.0",
